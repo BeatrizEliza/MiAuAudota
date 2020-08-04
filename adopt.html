@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiAuAudota | Sua plataforma de adoção de animais</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/partials/page-adopt.css">
+
+</head>
+<body id="page-adopt">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                <img src="/assets/arrow-left.svg" alt="Voltar">
+                </a>
+                <img src="/assets/Anotação_2020-08-03_122800-removebg-preview.png" alt="MiAuAudota">
+            </div>
+            <div class="header-content">
+                <strong>Estes são os pets para adoção</strong>
+                <form id="search-pets">
+                    <div class="select-block">
+                        <label for="pet">Qual pet deseja</label>
+                        <select name="pet" id="pet">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            <option value="1">Cachorro</option>
+                            <option value="2">Gato</option>
+                            <option value="3">Pássaro</option>
+                            <option value="4">Peixe</option>
+                            <option value="5">Coelho</option>
+                            <option value="6">Tartaruga</option>
+                            <option value="7">Hamster</option>
+                            <option value="8">Iguana</option>
+                            <option value="9">Cobra</option>
+                            <option value="10">Cavalo</option>
+                        </select>
+            </div>
+            <div class="select-block">
+                <label for="sex">Sexo</label>
+                <select name="sex" id="sex">
+                    <option value="" disabled="" hidden="">Selecione uma opção</option>
+                    <option value="0">Macho</option>
+                    <option value="1">Fêmea</option>
+                </select>
+            </div>
+            <div class="input-block">
+                <label for="age">Idade</label>
+                <input name="age" id="age" type="number" min="0" max="20">
+            </div>
+                <button type="submit">Filtrar</button>
+                </form>
+            </div>
+        </header>
+
+        <main>
+            <article class="pet-item">
+                <header>
+                    <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1560&q=80" alt="Cachorro">
+                    <div>
+                        <strong>Toby Tobynho</strong>
+                        <span>Cachorro</span>
+                    </div>
+                </header>
+                <p>Cãozinho amoroso e muito brincalhão. <br><br>Gosta de comer ração o tempo todo e brincar de pegar a bolinha, pronto para conviver com crianças</p>
+                <footer>
+                    <p>Nome do aunciante <strong>Regiane Dutra</strong></p>
+                    <button type="button">
+                        <img src="/assets/whatsapp.svg" alt="whatsapp">Entrar em contato
+                    </button>
+                </footer>
+            </article>
+        </main>
+
+        <main>
+            <article class="pet-item">
+                <header>
+                    <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="Gato">
+                    <div>
+                        <strong>Mimo Bichano</strong>
+                        <span>Gato</span>
+                    </div>
+                </header>
+                <p>Gatinho sossegado e amoroso <br><br>Dorme o dia inteiro mas a noite gosta de arranhar os móveis e comer passarinhos</p>
+                <footer>
+                    <p>Nome do aunciante <strong>Paulo Pietro</strong></p>
+                    <button type="button">
+                        <img src="/assets/whatsapp.svg" alt="whatsapp">Entrar em contato
+                    </button>
+                </footer>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
