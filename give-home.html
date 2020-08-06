@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8257E5">
+
+    <title>MiAuAudota | Sua plataforma de adoção de animais</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/162321645.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/page-give-home.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
+
+</head>
+<body id="page-give-home">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                <img src="/assets/arrow-left.svg" alt="Voltar">
+                </a>
+                <img src="/assets/Anotação_2020-08-03_122800-removebg-preview.png" alt="MiAuAudota">
+            </div>
+            <div class="header-content">
+                <strong>Quer dar um lar para um pet?</strong>
+                <p>O primeiro passo é preencher esse formulário de inscrição:</p>
+        </header>
+
+        <main>
+            <form action="" id="create-adoption">
+                <fieldset id="pets-sex"> 
+                    <legend>
+                        Dados do pet
+                    </legend>
+
+                    <div class="input-block">
+                        <label for="name">Nome do pet</label>
+                        <input name="name" id="name" required>
+                    </div>
+                    <div class="input-block">
+                        <label for="foto-pet">Link da foto <small> (comece com https://) </small></label>
+                        <input name="foto-pet" id="foto-pet" type="url">
+                    </div>
+                    <div class="input-block">
+                        <label for="whatsapp">WhatsApp <small>(somente números)</small></label>
+                        <input type="number" name="whatsapp" id="whatsapp" required>
+                    </div>
+                    <div class="textarea-block">
+                        <label for="bio">Informações e características</label>
+                        <textarea name="bio" id="bio" required></textarea>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sobre</legend>
+                    <div class="select-block">
+                        <label for="pet">Qual é o animalzinho?</label>
+                        <select name="pet" id="pet" required>
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            <option value="1">Cachorro</option>
+                            <option value="2">Gato</option>
+                            <option value="3">Pássaro</option>
+                            <option value="4">Peixe</option>
+                            <option value="5">Coelho</option>
+                            <option value="6">Tartaruga</option>
+                            <option value="7">Hamster</option>
+                            <option value="8">Iguana</option>
+                            <option value="9">Cobra</option>
+                            <option value="10">Cavalo</option>
+                            <option value="11">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="anunciante"> 
+                            Nome do anunciante
+                        </label>
+                        <input type="text" name="anunciante" id="anunciante" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informações adicionais</legend>
+
+                    <div class="pet-sex">
+
+                        <div class="select-block">
+                            <label for="sex">Sexo</label>
+                            <select name="sex" id="sex">
+                                <option value="" disabled="" hidden="">Selecione uma opção</option>
+                                <option value="0">Macho</option>
+                                <option value="1">Fêmea</option>
+                            </select>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="age">Idade estimada</label>
+                            <input type="age_from" name="age_from" required>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <footer>
+                <p>
+                    <img src="/assets/warning.svg" alt="Aviso importante">
+                    Importante! <br> Preencha todos os dados
+                </p>
+                <button type="submit" form="create-adoption">Salvar cadastro</button>
+            </footer>
+        </main>
+    </div>
+    <script src="/scripts/addField.js"></script>
+</body>
+</html>
