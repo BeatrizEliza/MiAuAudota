@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8257E5">
+
+    <title>MiAuAudota | Sua plataforma de adoção de animais</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/162321645.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="./styles/partials/page-adopt.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
+
+</head>
+<body id="page-adopt">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                <img src="/assets/arrow-left.svg" alt="Voltar">
+                </a>
+                <img src="/assets/Anotação_2020-08-03_122800-removebg-preview.png" alt="MiAuAudota">
+            </div>
+            <div class="header-content">
+                <strong>Estes são os pets para adoção</strong>
+                <form id="search-pets">
+                    <div class="select-block">
+                        <label for="pet">Qual pet deseja</label>
+                        <select name="pet" id="pet">
+                            <option value="" disabled="" hidden="">Selecione uma opção
+                            </option>
+
+                            {%for pet in petsChoice %}
+                                <option value="{{loop.index}}" {{"selected" if filters.pet == loop.index}} > {{pet}}
+                                </option>
+                            {%endfor%}
+
+                        </select>
+                </div>
+            <div class="select-block">
+                <label for="sex">Sexo</label>
+                <select name="sex" id="sex">
+                    <option value="" disabled="" hidden="">Selecione uma opção</option>
+                    {%for petSex in petsSex %}
+                            <option value="{{loop.index}}" {{"selected" if filters.petSex == loop.index}} > {{petSex}}
+                            </option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class="input-block">
+                <label for="age">Idade</label>
+                <input name="age" id="age" type="number" min="0" max="20" value={{filters.age}}>
+            </div>
+                <button type="submit">Filtrar</button>
+                </form>
+            </div>
+        </header>
+
+        <main>
+            {%if pets == "" %}
+                <p class="no-results">Nenhum pet encontrado com a sua pesquisa</p>
+                {%else %}
+                    {% for pet in pets %}
+                        <article class="pet-item">
+                <header>
+                    <img src="{{pet.fotopet}}" alt="{{pet.name}}">
+                    <div>
+                        <strong>{{pet.name}}</strong>
+                        <span>{{pet.sex}}</span>
+                    </div>
+                </header>
+                <p>{{pet.bio}}</p>
+                <footer>
+                    <p>Nome do aunciante <strong>{{pet.anunciante}}</strong></p>
+                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{pet.whatsapp}}&text=Tenho interesse no seu pet {{pet.sex}} {{pet.name}}" class="button" target="_blank">
+                        <img src="./assets/whatsapp.svg" alt="Whatsapp"> Entrar em contato
+                    </a>
+                </footer>
+                        </article>
+                    {%endfor%}
+            {% endif %}
+
+
+        </main>
+    </div>
+</body>
+</html>

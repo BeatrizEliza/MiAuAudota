@@ -31,7 +31,7 @@
         </header>
 
         <main>
-            <form action="" id="create-adoption">
+            <form action="/save-home" id="create-adoption" method="POST">
                 <fieldset id="pets-sex"> 
                     <legend>
                         Dados do pet
@@ -42,8 +42,8 @@
                         <input name="name" id="name" required>
                     </div>
                     <div class="input-block">
-                        <label for="foto-pet">Link da foto <small> (comece com https://) </small></label>
-                        <input name="foto-pet" id="foto-pet" type="url">
+                        <label for="fotopet">Link da foto <small> (comece com https://) </small></label>
+                        <input name="fotopet" id="fotopet" type="url">
                     </div>
                     <div class="input-block">
                         <label for="whatsapp">WhatsApp <small>(somente números)</small></label>
@@ -62,17 +62,10 @@
                         <label for="pet">Qual é o animalzinho?</label>
                         <select name="pet" id="pet" required>
                             <option value="" disabled="" hidden="">Selecione uma opção</option>
-                            <option value="1">Cachorro</option>
-                            <option value="2">Gato</option>
-                            <option value="3">Pássaro</option>
-                            <option value="4">Peixe</option>
-                            <option value="5">Coelho</option>
-                            <option value="6">Tartaruga</option>
-                            <option value="7">Hamster</option>
-                            <option value="8">Iguana</option>
-                            <option value="9">Cobra</option>
-                            <option value="10">Cavalo</option>
-                            <option value="11">Outro</option>
+                            {%for pet in petsChoice %}
+                                <option value="{{loop.index}}"> {{pet}}
+                                </option>
+                            {%endfor%}
                         </select>
                     </div>
 
@@ -91,10 +84,12 @@
 
                         <div class="select-block">
                             <label for="sex">Sexo</label>
-                            <select name="sex" id="sex">
-                                <option value="" disabled="" hidden="">Selecione uma opção</option>
-                                <option value="0">Macho</option>
-                                <option value="1">Fêmea</option>
+                            <select name="sex" required>
+                                <option value="">Selecione uma opção</option>
+                                {%for petSex in petsSex %}
+                                    <option value="{{loop.index0}}" > {{petSex}}
+                                    </option>
+                                {%endfor%}
                             </select>
                         </div>
 
