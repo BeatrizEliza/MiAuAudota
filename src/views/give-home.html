@@ -84,7 +84,7 @@
 
                         <div class="select-block">
                             <label for="sex">Sexo</label>
-                            <select name="sex" required>
+                            <select name="sex[]" required>
                                 <option value="">Selecione uma opção</option>
                                 {%for petSex in petsSex %}
                                     <option value="{{loop.index0}}" > {{petSex}}

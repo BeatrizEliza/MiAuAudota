@@ -21,7 +21,7 @@ function execute(db) {
         CREATE TABLE IF NOT EXISTS pets_information2 (
             sex INTEGER,
             age INTEGER,
-            pets_information2_id INTEGER    
+            pets_information2_id INTEGER 
         );
     `)
 }

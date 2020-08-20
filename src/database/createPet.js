@@ -31,17 +31,17 @@ module.exports = async function(db, {petValue, informationValue, informationValu
         );
     `)
 
-    const information_id = insertedInformation.lastID
+    const pets_information2_id = insertedInformation.lastID
 
     //inserir dados na tabela pets_information2
     const insertedAllInformationValues = informationValue2.map((informationValue2) => {
         return db.run(`
             INSERT INTO pets_information2 (
-                information_id,
+                pets_information2_id,
                 sex,
                 age
             ) VALUES (
-                "${information_id}",
+                "${pets_information2_id}",
                 "${informationValue2.sex}",
                 "${informationValue2.age}" 
             );

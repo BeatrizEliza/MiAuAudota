@@ -61,11 +61,11 @@
         </header>
 
         <main>
-            {%if pets == "" %}
+            {% if pets == " " %}
                 <p class="no-results">Nenhum pet encontrado com a sua pesquisa</p>
-                {%else %}
-                    {% for pet in pets %}
-                        <article class="pet-item">
+            {% else %}
+                {% for pet in pets %}
+                    <article class="pet-item">
                 <header>
                     <img src="{{pet.fotopet}}" alt="{{pet.name}}">
                     <div>
@@ -81,7 +81,7 @@
                     </a>
                 </footer>
                         </article>
-                    {%endfor%}
+                    {% endfor %}
             {% endif %}
 
 

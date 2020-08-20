@@ -24,7 +24,7 @@ Database.then(async (db) => {
     //consultar dados //TODOS OS PETS
 
     const selectedPets = await db.all("SELECT * FROM registrer")
-    //console.log(selectedPets)
+    console.log(selectedPets)
 
     // consultar informações do pet e trazer junto FALHA
     const selectRegistrerAndInformation = await db.all(`
@@ -38,7 +38,7 @@ Database.then(async (db) => {
     const selectInformation2 = await db.all(`
         SELECT pets_information2.*
         FROM pets_information2
-        WHERE pets_information2.information_id = "1"
+        WHERE pets_information2.pets_information2_id = "1"
         AND pets_information2.sex = "0"
         AND pets_information2.age = "12"
     `)

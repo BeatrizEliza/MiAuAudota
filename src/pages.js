@@ -9,7 +9,7 @@ function pageLanding(req, res) {
 async function pageAdopt(req,res){
     const filters = req.query
 
-    if(!filters.petsChoice || !filters. petsSex || filters.age){
+    if(!filters.petsChoice || !filters.petsSex || filters.age){
 
         return res.render("adopt.html", {filters, petsChoice, petsSex})
     }
@@ -21,9 +21,9 @@ async function pageAdopt(req,res){
         WHERE EXISTS (
             SELECT pets_information2.*
             FROM pets_information2
-            WHERE pets_information2.information_id = information.id
-            AND pets_information2.age = ${filters.age}
-            AND pets_information2.sex = ${filters.petSex}
+            WHERE pets_information2.pets_information2_id = pets_information2.id
+            AND pets_information2.age = "${filters.age}"
+            AND pets_information2.sex = "${filters.petSex}"
         ) 
         AND pets_information.pet = "${filters.pet}"
     `
@@ -64,10 +64,12 @@ async function saveHome(req, res) {
         anunciante: req.body.anunciante
     }
 
-    const informationValue2 = {
-        sex: req.body.sex,
-        age: req.body.age
-    }
+    const informationValue2 =  [
+        {
+            sex: req.body.sex,
+            age: req.body.age
+        }
+    ]
    
   try {
       const db = await DataBase
